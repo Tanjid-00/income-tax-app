@@ -1,0 +1,36 @@
+/* Navbar.css */
+.header {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 5px 5px #80808076;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 30px;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLinks a {
+  text-decoration: none;
+}
+.navLinks button {
+  padding: 5px;
+}
+.navLinks .active {
+  font-weight: bold;
+  /* border-bottom: 2px solid crimson; */
+  color: red;
+}

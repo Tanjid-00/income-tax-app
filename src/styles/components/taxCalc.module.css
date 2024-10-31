@@ -1,0 +1,25 @@
+.calculator {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 20px;
+}
+.calculator form {
+  /* background: seagreen; */
+}
+.calculator .taxSlip {
+  /* font-family: sans-serif; */
+  background: white;
+  padding: 10px;
+  box-shadow: 0 5px 10px gainsboro;
+}
+.taxSlip h3 {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 992px) {
+  .calculator {
+    display: grid;
+    grid-template-columns: 65% auto;
+  }
+}
