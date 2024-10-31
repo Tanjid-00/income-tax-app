@@ -7,25 +7,37 @@ const TaxCalc = () => {
 
   // Output
 
-  const [annualGrossSalary, setAnnualGrossSalary] = useState("");
-  const [basicPay, setBasicPay] = useState();
-  const [houseRentAllowance, setHouseRentAllowance] = useState("");
-  const [medicalAllowance, setMedicalAllowance] = useState("");
-  const [totalTaxableIncome, setTotalTaxableIncome] = useState("");
-  const [totalIncTax, setTotalIncTax] = useState("");
+  const [monthlyGrossSalary, setMonthlyGrossSalary] = useState(null);
+  const [annualGrossSalary, setAnnualGrossSalary] = useState(0);
+  const [basicPay, setBasicPay] = useState(0);
+  const [houseRentAllowance, setHouseRentAllowance] = useState(0);
+  const [medicalAllowance, setMedicalAllowance] = useState(0);
+  const [totalTaxableIncome, setTotalTaxableIncome] = useState(0);
+  const [totalIncTax, setTotalIncTax] = useState(0);
 
   //
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setAnnualGrossSalary(monthLyIncome * 12);
-    setBasicPay(annualGrossSalary * 0.6);
-    setHouseRentAllowance(annualGrossSalary * 0.2);
-    setMedicalAllowance(annualGrossSalary * 0.15);
-    setTotalTaxableIncome(annualGrossSalary * 0.65);
-    setTotalIncTax(annualGrossSalary < 300000 ? "0" : annualGrossSalary * 0.5);
 
-    console.log(annualGrossSalary.type);
+    const annualSalary = monthLyIncome * 12;
+
+    // store the calculation in var
+    const calculatedBasicPay = annualSalary * 0.6;
+    const calculatedHouseRentAllowance = annualSalary * 0.2;
+    const calculatedMedicalAllowance = annualSalary * 0.15;
+    const calculatedTotalTaxableIncome = annualSalary * 0.65;
+    const calculatedTotalIncTax =
+      annualSalary < 300000 ? 0 : annualSalary * 0.5;
+
+    // update all the states
+    setMonthlyGrossSalary(monthLyIncome);
+    setAnnualGrossSalary(annualSalary);
+    setBasicPay(calculatedBasicPay);
+    setHouseRentAllowance(calculatedHouseRentAllowance);
+    setMedicalAllowance(calculatedMedicalAllowance);
+    setTotalTaxableIncome(calculatedTotalTaxableIncome);
+    setTotalIncTax(calculatedTotalIncTax);
   };
 
   return (
@@ -66,7 +78,7 @@ const TaxCalc = () => {
               <tbody>
                 <tr>
                   <td>Monthly Gross Salary</td>
-                  <td>{monthLyIncome}</td>
+                  <td>{monthlyGrossSalary}</td>
                 </tr>
                 <tr>
                   <td>Annual Gross Salary</td>
