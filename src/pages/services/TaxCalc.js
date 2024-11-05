@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import style from "../styles/components/taxCalc.module.css";
+import style from "../../styles/taxCalc.module.css";
 
 const TaxCalc = () => {
-  const [monthLyIncome, setMonthLyIncome] = useState("");
+  const [monthLyIncome, setMonthLyIncome] = useState();
   const [gender, setGender] = useState("");
 
   // Output
@@ -15,20 +15,41 @@ const TaxCalc = () => {
   const [totalTaxableIncome, setTotalTaxableIncome] = useState(0);
   const [totalIncTax, setTotalIncTax] = useState(0);
 
-  //
+  // Updated calculateTax function
+  const calculateTax = (income) => {
+    let tax = 0;
+
+    if (income <= 300000) {
+      tax = 0;
+    } else if (income <= 400000) {
+      tax = (income - 300000) * 0.05;
+    } else if (income <= 700000) {
+      tax = 100000 * 0.05 + (income - 400000) * 0.1;
+    } else if (income <= 1100000) {
+      tax = 100000 * 0.05 + 300000 * 0.1 + (income - 700000) * 0.15;
+    } else if (income <= 1600000) {
+      tax =
+        100000 * 0.05 + 300000 * 0.1 + 400000 * 0.15 + (income - 1100000) * 0.2;
+    } else {
+      tax =
+        100000 * 0.05 +
+        300000 * 0.1 +
+        400000 * 0.15 +
+        500000 * 0.2 +
+        (income - 1600000) * 0.25;
+    }
+
+    setTotalIncTax(tax);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const annualSalary = monthLyIncome * 12;
-
-    // store the calculation in var
     const calculatedBasicPay = annualSalary * 0.6;
     const calculatedHouseRentAllowance = annualSalary * 0.2;
     const calculatedMedicalAllowance = annualSalary * 0.15;
     const calculatedTotalTaxableIncome = annualSalary * 0.65;
-    const calculatedTotalIncTax =
-      annualSalary < 300000 ? 0 : annualSalary * 0.5;
 
     // update all the states
     setMonthlyGrossSalary(monthLyIncome);
@@ -37,7 +58,9 @@ const TaxCalc = () => {
     setHouseRentAllowance(calculatedHouseRentAllowance);
     setMedicalAllowance(calculatedMedicalAllowance);
     setTotalTaxableIncome(calculatedTotalTaxableIncome);
-    setTotalIncTax(calculatedTotalIncTax);
+
+    // calculate tax based on updated annual salary
+    calculateTax(annualSalary);
   };
 
   return (

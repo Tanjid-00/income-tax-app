@@ -7,7 +7,17 @@
 .calculator .taxSlip {
   background: white;
   padding: 10px;
+  box-shadow: var(--boxShadow);
+}
+.calculator form {
+  background: white;
+  padding: 10px;
   box-shadow: 0 5px 10px gainsboro;
+}
+.calculator form button {
+  border: 1px solid black;
+  padding: 5px;
+  background: var(--color1);
 }
 .taxSlip h3 {
   width: fit-content;

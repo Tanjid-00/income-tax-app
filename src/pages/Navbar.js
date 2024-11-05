@@ -17,7 +17,7 @@ const Navbar = () => {
         </a>
 
         <ul className={style.navLinks}>
-          <li>
+          {/* <li>
             <NavLink
               to={"/services"}
               className={({ isActive }) =>
@@ -36,7 +36,7 @@ const Navbar = () => {
             >
               DASHBOARD
             </NavLink>
-          </li>
+          </li> */}
           <button onClick={() => (isLoggedIn ? logout() : navigate("/login"))}>
             {isLoggedIn ? "Log Out" : "Log In"}
           </button>

@@ -1,0 +1,78 @@
+/* Container for the entire form */
+.servicePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.servicePage {
+  .indicatorContainer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .indicatorContainer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  /* Individual navigation button styling */
+  .navButton {
+    padding: 10px;
+    border: none;
+    background-color: lightgray;
+    cursor: pointer;
+    /* transition: background-color rotate 0.4s ease; */
+    border-radius: 5px;
+  }
+
+  .navButton:disabled {
+    background-color: darkgray;
+    cursor: not-allowed;
+  }
+
+  /* Active navigation button styling */
+  .active {
+    background-color: red;
+    color: white;
+  }
+
+  /* Form section styling */
+  .sectionContainer {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* Individual form styling */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 8px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    /* background-color: #0056b3; */
+  }
+}
