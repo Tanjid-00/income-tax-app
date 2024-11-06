@@ -111,7 +111,7 @@ const UploadFiles = ({
             type="file"
             id="fdrStatement"
             accept="application/pdf"
-            onChange={(e) => handleFileChange("fdrStatementFile", e)}
+            onChange={(e) => handleFileChange("fdrStatement", e)}
           />
           {fdrStatementFile && (
             <p className={style.filePreview}>📂 {fdrStatementFile.name}</p>
@@ -124,7 +124,7 @@ const UploadFiles = ({
             type="file"
             id="remittance"
             accept="application/pdf"
-            onChange={(e) => handleFileChange("remittanceFile", e)}
+            onChange={(e) => handleFileChange("remittance", e)}
           />
           {remittanceFile && (
             <p className={style.filePreview}>📂 {remittanceFile.name}</p>
@@ -137,7 +137,7 @@ const UploadFiles = ({
             type="file"
             id="lastTaxFile"
             accept="application/pdf"
-            onChange={(e) => handleFileChange("lastTaxFilePdf", e)}
+            onChange={(e) => handleFileChange("lastTaxFile", e)}
           />
           {lastTaxFilePdf && (
             <p className={style.filePreview}>📂 {lastTaxFilePdf.name}</p>

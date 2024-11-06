@@ -11,7 +11,7 @@ const Payment = ({ onSubmit }) => {
     }
   };
   return (
-    <div>
+    <div className={style.paymentForm}>
       <div>
         <h3>Payment</h3>
         <form onSubmit={handleSubmit}>

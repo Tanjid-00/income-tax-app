@@ -157,8 +157,11 @@ const TaxFile = () => {
                 tinNumber={formData.uploadFiles.tinNumber}
                 tinCertificateFile={formData.uploadFiles.tinCertificate} // Pass file object
                 nidNumber={formData.uploadFiles.nidNumber}
-                nidCardFile={formData.uploadFiles.nidCard} // Pass file object
-                bankStatementFile={formData.uploadFiles.bankStatement} // Pass file object
+                bankStatementFile={formData.uploadFiles.bankStatement}
+                remittanceFile={formData.uploadFiles.remittance}
+                dpsStatementFile={formData.uploadFiles.dpsStatement}
+                fdrStatementFile={formData.uploadFiles.fdrStatement}
+                lastTaxFilePdf={formData.uploadFiles.lastTaxFile}
                 remarks={formData.uploadFiles.remarks}
               />
             )}
