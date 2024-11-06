@@ -82,13 +82,13 @@
 .uploadFilesForm form .submitBtn,
 .paymentForm form .submitBtn {
   border: none;
-  /* background: var(--color2); */
-  background: crimson;
+  background: var(--color2);
   padding: 15px;
   border-radius: 5px;
   color: white;
   font-weight: 700;
   width: 100%;
+  margin-top: 20px;
 }
 .uploadFilesForm form .fileImg {
   width: 100px;
@@ -107,7 +107,7 @@
 /***** Upload File Section *****/
 
 .uploadFilesForm form input[type="file"] {
-  background: #00000008;
+  background: #d8d8d808;
   width: 100%;
 }
 .uploadFilesForm .dropdownContainer {
