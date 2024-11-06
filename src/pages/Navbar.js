@@ -37,9 +37,13 @@ const Navbar = () => {
               DASHBOARD
             </NavLink>
           </li> */}
-          <button onClick={() => (isLoggedIn ? logout() : navigate("/login"))}>
-            {isLoggedIn ? "Log Out" : "Log In"}
-          </button>
+          <li>
+            <button
+              onClick={() => (isLoggedIn ? logout() : navigate("/login"))}
+            >
+              {isLoggedIn ? "Log Out" : "Log In"}
+            </button>
+          </li>
         </ul>
       </nav>
     </header>

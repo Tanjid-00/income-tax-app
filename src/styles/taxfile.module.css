@@ -27,14 +27,14 @@
   gap: 5px;
   align-items: center;
   border: none;
-  color: #555;
+  color: var(--paragraph);
   font-size: 16px;
   cursor: pointer;
 }
 
 .indicatorContainer .navButton:disabled span {
   cursor: not-allowed;
-  color: #ccc;
+  color: #bfbfbf;
 }
 
 .indicatorContainer .navButton .circle {
@@ -74,7 +74,14 @@
 .paymentForm form input,
 .detailsForm select {
   border-radius: 10px;
-  border: 1px solid #00000050;
+  padding: 15px;
+  width: 100%;
+}
+.uploadFilesForm form textarea {
+  height: 150px;
+  resize: none;
+  overflow-y: auto;
+  border-radius: 10px;
   padding: 15px;
   width: 100%;
 }
@@ -82,7 +89,7 @@
 .uploadFilesForm form .submitBtn,
 .paymentForm form .submitBtn {
   border: none;
-  background: var(--color2);
+  background: var(--color1);
   padding: 15px;
   border-radius: 5px;
   color: white;
@@ -107,9 +114,16 @@
 /***** Upload File Section *****/
 
 .uploadFilesForm form input[type="file"] {
-  background: #d8d8d808;
   width: 100%;
 }
+
+/* .uploadFilesForm form label label {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+} */
+
 .uploadFilesForm .dropdownContainer {
   box-shadow: 0 1px 5px gainsboro;
   padding: 10px;
@@ -129,6 +143,7 @@
   padding: 15px 0;
   border: none;
   font-weight: 600;
+  color: var(--paragraph);
 }
 
 /***** End Upload File Section *****/

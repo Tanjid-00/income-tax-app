@@ -76,6 +76,17 @@ const UploadFiles = ({
             </div>
           )}
         </div>
+        {/* Nid number */}
+
+        <label htmlFor="nidNumber">
+          NID Number
+          <input
+            type="number"
+            id="nidNumber"
+            value={nidNumber}
+            onChange={(e) => handleInputChange("nidNumber", e)}
+          />
+        </label>
 
         {/* Bank Statement */}
         <label htmlFor="bankStatement">
@@ -142,6 +153,17 @@ const UploadFiles = ({
           {lastTaxFilePdf && (
             <p className={style.filePreview}>📂 {lastTaxFilePdf.name}</p>
           )}
+        </label>
+
+        <label htmlFor="remarks">
+          Remarks
+          <textarea
+            name="remarks"
+            id="remarks"
+            placeholder="Add any specific details or instruction for your tax filing here"
+            value={remarks}
+            onChange={(e) => handleInputChange("remarks", e)}
+          ></textarea>
         </label>
 
         <button className={style.submitBtn} type="submit">

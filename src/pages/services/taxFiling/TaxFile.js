@@ -13,7 +13,6 @@ const TaxFile = () => {
     3: false,
   });
 
-  // Store form data to retain values on navigation
   const [formData, setFormData] = useState({
     details: {
       name: "",
@@ -24,9 +23,9 @@ const TaxFile = () => {
     },
     uploadFiles: {
       tinNumber: "",
-      tinCertificate: null, // File object here
+      tinCertificate: null,
       nidNumber: "",
-      bankStatement: null, // File object here
+      bankStatement: null,
       remittance: null,
       dpsStatement: null,
       fdrStatement: null,
@@ -34,35 +33,10 @@ const TaxFile = () => {
       remarks: "",
     },
     payment: {
+      cardHolderName: "",
       cardNumber: "",
     },
   });
-
-  // const handleInputChange = (formSection, field, value) => {
-  //   if (
-  //     field === "tinCertificate" ||
-  //     field === "nidCard" ||
-  //     field === "bankStatement"
-  //   ) {
-  //     const file = value;
-  //     setFormData((prevData) => ({
-  //       ...prevData,
-  //       [formSection]: {
-  //         ...prevData[formSection],
-  //         [field]: file,
-  //         [`${field}Url`]: file ? URL.createObjectURL(file) : null, // Set URL for preview
-  //       },
-  //     }));
-  //   } else {
-  //     setFormData((prevData) => ({
-  //       ...prevData,
-  //       [formSection]: {
-  //         ...prevData[formSection],
-  //         [field]: value,
-  //       },
-  //     }));
-  //   }
-  // };
 
   const handleInputChange = (formSection, field, value) => {
     setFormData((prevData) => ({
@@ -82,7 +56,7 @@ const TaxFile = () => {
       setActiveSection(3);
       setCompletedSections((prevState) => ({ ...prevState, 2: true }));
     } else if (section === 3) {
-      alert("Completed all the forms");
+      console.log("Form submitted successfully");
       setCompletedSections((prevState) => ({ ...prevState, 3: true }));
       setData(formData);
     }
@@ -169,6 +143,8 @@ const TaxFile = () => {
             {activeSection === 3 && (
               <Payment
                 onSubmit={() => handleFormSubmit(3)}
+                onChange={handleInputChange}
+                cardHolderName={formData.payment.cardHolderName}
                 cardNumber={formData.payment.cardNumber}
               />
             )}
